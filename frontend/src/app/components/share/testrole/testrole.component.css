@@ -1,0 +1,16 @@
+.cardTop{
+    margin: 10px;
+    padding: 10px;
+}
+
+
+ .consolebody {
+   margin: 5px;
+  border-radius: 5px;
+padding: 5px;
+  box-sizing: border-box;
+  height: calc(100% - 40px);
+  overflow: scroll;
+  background-color: #000 !important;
+  color: #63de00 !important;
+}

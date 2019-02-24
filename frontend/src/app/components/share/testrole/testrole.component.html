@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="cardTop card">
+  <div class="row">
+      <div class="col-sm-6 col-md-4">
+      <div class="card ">
+        <div class="card-body">
+          <h5 class="card-title"> Get All User </h5>
+
+          <p class="card-text">Result :</p>
+          <div class="consolebody">
+
+            <div *ngFor="let user of users$| async">
+            {{user.name}}
+            </div>
+            <div *ngIf="adminClick">
+            <div *ngIf="error$ | async as err">
+              error: {{err.status}}
+            </div>
+          </div>
+          </div>
+
+          <a (click)="testAdmin()" class="btn btn-primary"> Test Admin request </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <div class="card ">
+          <div class="card-body">
+            <h5 class="card-title"> Get Current User</h5>
+            <p class="card-text">Result :</p>
+            <div class="consolebody">
+
+            <div *ngIf="user$ | async as userr">
+                username: {{userr.name}}
+            </div>
+            <div *ngIf="userClick">
+
+              <div *ngIf="error$ | async as err">
+                error: {{err.status}}
+              </div>
+            </div>
+            </div>
+
+            <a (click)="testUser()" class="btn btn-primary"> Test User request </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 col-sm-6">
+          <div class="card ">
+            <div class="card-body">
+              <h5 class="card-title"> Get Public request</h5>
+              <p class="card-text">Result :</p>
+              <div class="consolebody">
+
+              <div *ngIf="publi$ | async as test">
+                  pub: {{test.message}}
+                </div>
+
+
+                </div>
+              <a (click)="testPub()" class="btn btn-primary"> Test Public request </a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  </div>

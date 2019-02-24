@@ -1,0 +1,59 @@
+<div class="mt-4 col-8 offset-2">
+  <div class="card">
+    <div class="card-header">Register Here</div>
+    <div class="card-body">
+      <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label for="inputName3" class="col-md-3 col-form-label">Name</label>
+          <div class="col-md-9">
+            <input type="text" name="name" class="form-control" id="inputname3" placeholder="Name" [(ngModel)]="form.name" required>
+            <div class="alert alert-danger" [hidden]="!error.name">
+              {{error.name}}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
+          <div class="col-md-9">
+            <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required>
+            <div class="alert alert-danger" [hidden]="!error.email">
+              {{error.email}}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPasswordConfirmation3" class="col-md-3 col-form-label">Password</label>
+          <div class="col-md-9">
+            <input type="password" name="password" class="form-control" id="inputPasswordConfirmation3" placeholder="Confirm Password"
+              [(ngModel)]="form.password" required>
+            <div class="alert alert-danger" [hidden]="!error.password">
+              {{error.password}}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-md-3 col-form-label">Confirm Password</label>
+          <div class="col-md-9">
+            <input type="password" name="password_confirmation" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password_confirmation"
+              required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6" style="margin:5px">
+
+            <button type="submit" class="btn btn-block btn-primary" [disabled]="!signupForm.valid">Sign Up</button>
+          </div>
+          <div class="col-sm-5" style="margin:5px">
+            <a routerLink="/login" class="btn btn-info float-right">Sign in</a>
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
